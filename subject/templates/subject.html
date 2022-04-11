@@ -22,12 +22,14 @@
 
         <div class="container">
             <div class="col-md-10 offset-1">
+                <form action="" method="GET">
+                    {% csrf_token %}
                 <div class="row"> 
                     <div class="col-md-4">
                         <div class="mb-3">
                             <label class="form-label">Choose Category</label>
                             <div class=""> 
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select" aria-label="Default select example" name="category">
                                     <option selected>select from here</option>
                                     <option value="1">Benefit</option>
                                     <option value="2">Topic</option>
@@ -41,11 +43,16 @@
                     <div class="col-md-6">
                         <div class="mb-3">
                             <label class="form-label">Enter KeyWord</label>
-                            <input type="text" class="form-control" placeholder="Lead-generation">
+                            <input type="text" class="form-control" placeholder="Lead-generation" id="keyword" >
                           </div>
                     </div>
                 </div> 
-                <div class="row">
+                <div class="G_btn">
+                <button type="submit" class="btn btn-primary btn-lg" onchange="keyword()">Generate</button>
+                </div>
+                <!-- <input type="submit" value="Generate">  -->
+                    </form>
+                <div class="row" id="output">
                     <div class="col-md-12">
                         {%block output%} 
                           
@@ -55,10 +62,11 @@
             </div> 
     
         </div>       		
-    </div>  
+    </div>
 
-        <script src="{%static 'signature/js/jquery.js'%}"></script>
-        <script src="{%static 'signature/js/popper.js'%}"></script>
-        <script src="{%static 'signature/js/bootstrap.js'%}"></script>
+        <script src="{%static 'js/main.js'%}"></script>
+        <script src="{%static 'js/jquery.js'%}"></script>
+        <script src="{%static 'js/popper.js'%}"></script>
+        <script src="{%static 'js/bootstrap.js'%}"></script>
 	</body>
 </html>
