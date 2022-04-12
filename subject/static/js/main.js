@@ -1,6 +1,7 @@
 console.log("Connected")
 var input=document.getElementById("word").value;
 console.log("user value is",input)
+// var user = {{inp}}.style.color = "blue";
 
 
 // // function keyword(){
