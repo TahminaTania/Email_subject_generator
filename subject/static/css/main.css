@@ -13,13 +13,19 @@ label{
    float: right;
    margin-top: 5px;
 }
+.btn-primary{
+    background-color: rgb(137, 2, 190);
+    border: none;
+    color: white;
+    font-weight: bold;
+}
 ol {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 #titl{
-    background-color:rgb(126, 31, 214);
+    background-color:rgba(171, 104, 233, 0.836);
     color: white;
     font-weight: bold;
     line-height: 40px;
@@ -32,4 +38,12 @@ ol {
 inp{
     font-weight: bolder;
     color:black;
+}
+.copy{
+    float: right;
+    padding:0 5px;
+    background-color:white;
+    color:rgb(126, 31, 214);
+    cursor: pointer;
+    /* margin-top: 5px; */
 }

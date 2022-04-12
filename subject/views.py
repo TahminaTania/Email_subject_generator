@@ -1,4 +1,7 @@
-from django import template
+# from django import template
+# import colorama
+# from colorama import Fore
+
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .models import pin_point,benefit,topic
@@ -9,17 +12,14 @@ from .models import pin_point,benefit,topic
 
 def index(request):
     return HttpResponse("Hello, world. You're at the view index.")
-
-
-# @register.filter
-# def to_and(value):
-#     return value.replace("{}","and")
-    
+ 
 def mail(request):
     sub=None
     cat = request.GET.get("category")
     word=None
     inp=request.GET.get("word")
+    # inp2= Fore.RED + inp
+    # print(inp2)
     
     if cat== "1":
         sub=benefit.objects.all()
