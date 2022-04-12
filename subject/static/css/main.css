@@ -29,3 +29,7 @@ ol {
 #output{
     margin-top: 90px;
 }
+inp{
+    font-weight: bolder;
+    color:black;
+}

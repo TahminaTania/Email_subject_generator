@@ -30,7 +30,7 @@
                             <label class="form-label">Choose Category</label>
                             <div class=""> 
                                 <select class="form-select" aria-label="Default select example" name="category">
-                                    <option selected>select from here</option>
+                                    <option selected >select from here</option>
                                     <option value="1">Benefit</option>
                                     <option value="2">Topic</option>
                                     <option value="3">Pain-Point</option>
@@ -43,12 +43,12 @@
                     <div class="col-md-6">
                         <div class="mb-3">
                             <label class="form-label">Enter KeyWord</label>
-                            <input type="text" class="form-control" placeholder="Lead-generation" id="keyword" >
+                            <input type="text" class="form-control"  placeholder="Lead-generation" name="word" id="word">
                           </div>
                     </div>
                 </div> 
                 <div class="G_btn">
-                <button type="submit" class="btn btn-primary btn-lg" onchange="keyword()">Generate</button>
+                <button type="submit" class="btn btn-primary btn-lg">Generate</button>
                 </div>
                 <!-- <input type="submit" value="Generate">  -->
                     </form>
@@ -63,10 +63,10 @@
     
         </div>       		
     </div>
-
         <script src="{%static 'js/main.js'%}"></script>
         <script src="{%static 'js/jquery.js'%}"></script>
         <script src="{%static 'js/popper.js'%}"></script>
         <script src="{%static 'js/bootstrap.js'%}"></script>
 	</body>
+
 </html>
