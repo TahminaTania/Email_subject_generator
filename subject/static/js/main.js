@@ -1,7 +1,7 @@
-console.log("Connected")
-var data={{inp}}
-console.log(data)
-data.style.color="blue"
+// console.log("Connected")
+// var data={{inp}}
+// console.log(data)
+// data.style.color="blue"
 
 
 
@@ -16,23 +16,13 @@ data.style.color="blue"
 
 
 
-
-
-
-
-
-
 function Copy(){
     console.log("user value is")
 
-        var SubjectLine = document.getElementsByClassName("subject");
-        console.log(SubjectLine)
-
-       
-   
+        var sub = document.querySelectorAll("[id='subject']"); 
+        for(var n =0; n < sub.length; n++){
+            var SubjectLine=sub[n].innerText;
+            console.log(SubjectLine);
   
-
-// document.execCommand("copy")
-
-// j.select();
+        }   
 }

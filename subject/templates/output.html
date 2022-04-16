@@ -8,8 +8,8 @@
         
         {%for m in sub%}
         <div class="text-center" id="titl">
-         <span class="subject">  {{m.title}} </span>
-         {% comment %} <span class="copy" onclick="Copy(this)">copy</span> {% endcomment %}
+         <span id="subject">  {{m.title}} </span>
+         <span class="copy" onclick="Copy()">copy</span>
         </div>
         {%endfor%}
         {{catagory}}
