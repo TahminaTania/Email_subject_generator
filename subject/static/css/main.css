@@ -39,7 +39,7 @@ inp{
     font-weight: bolder;
     color:black;
 }
-.copy{
+#copy{
     float: right;
     padding:0 5px;
     background-color:white;

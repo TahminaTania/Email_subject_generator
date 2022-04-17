@@ -6,10 +6,11 @@
     <h4 class="mt-3 mb-3">Here are your subject lines..</h4>
     <ol>
         
-        {%for m in sub%}
+        {%for item in sub%}
+
         <div class="text-center" id="titl">
-         <span id="subject">  {{m.title}} </span>
-         <span class="copy" onclick="Copy()">copy</span>
+         <span id="subject">  {{item.title}} </span>
+         <span id="copy" onclick="Copy()">copy</span>
         </div>
         {%endfor%}
         {{catagory}}
@@ -21,3 +22,22 @@
 
 
 {%endblock%}
+
+
+<span className="email-text">
+    {email.map((item) => {
+      return (
+        <p
+          key={item.id}
+          className="tooltips"
+          onClick={() => copyToClipboard(item.email)}
+          onMouseOut={() => outFunc(item.email)}
+        >
+          <span className="tooltiptext" id={item.email}>
+            Copy
+          </span>
+          <span className="text-maxlimit">{item.email}</span>
+        </p>
+      );
+    })}
+  </span>
