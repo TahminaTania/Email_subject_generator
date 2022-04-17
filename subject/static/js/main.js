@@ -16,7 +16,7 @@
 
 
 
-function Copy(){
+function Copy(C){
     console.log("user value is")
         var sub = document.querySelectorAll("[id='subject']"); 
         for(var n =0; n < sub.length; n++){
@@ -30,8 +30,7 @@ function Copy(){
             // console.log(cop);
             // console.log("array based copy----",cop[c].innerText);
         } 
-        // console.log("this line is before if:");
-       
+        console.log("this line is before if:" ,C);
         var textArea = document.createElement("textarea");
         textArea.innerText = SubjectLine;
         document.body.appendChild(textArea);
