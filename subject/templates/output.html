@@ -9,10 +9,8 @@
         {%for item in sub%}
 
         <div class="text-center" id="titl">
-
-            <span id="subject"> {{ item.title | safe }} </span>
-
-         <div class="copy" id="{{item.id}}" onclick="copy(`{{ item.title | safe }}`, '{{item.id}}')">Copy</div>
+        <span id="subject"> {{ item.title | safe }} </span>
+        <span class="copy" id="{{item.id}}" onclick="copy(`{{ item.title | safe }}`, '{{item.id}}')">Copy</span>
 
         </div>
         {%endfor%}
