@@ -15,27 +15,33 @@
 
 
 
+async function copy(text, id) {  
+    // test(); 
+    var textArea = document.createElement("textarea");   
+    textArea.innerText = text; 
+    console.log(text) 
+    document.body.appendChild(textArea);    
+    textArea.select();    
+    textArea.setSelectionRange(0, 99999);    
+    navigator.clipboard.writeText(textArea.value);
+    var tooltip = document.getElementById(id);    
+    tooltip.innerHTML = "Copied";  
+    textArea.remove(); 
+    await sleep(1500);
+    outFunc(id);
+  }
 
-function Copy(C){
-    console.log("user value is")
-        var sub = document.querySelectorAll("[id='subject']"); 
-        for(var n =0; n < sub.length; n++){
-            var SubjectLine=sub[n].innerText;
-            // console.log(SubjectLine);
-            // console.log("array based",sub[0].innerHTML);
-        }   
-        var cop = document.querySelectorAll("[id='copy']"); 
-        for(var c =0; c < cop.length; c++){
-            var text=cop[c].innerText;
-            // console.log(cop);
-            // console.log("array based copy----",cop[c].innerText);
-        } 
-        console.log("this line is before if:" ,C);
-        var textArea = document.createElement("textarea");
-        textArea.innerText = SubjectLine;
-        document.body.appendChild(textArea);
-        textArea.select();
-        document.execCommand("Copy");
-        textArea.remove();
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
+
+  function outFunc(id) {    
+    var tooltip = document.getElementById(id);    
+    tooltip.innerHTML = "Copy";  
+}
+
+
+
+
+
 
