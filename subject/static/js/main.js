@@ -1,17 +1,12 @@
-// console.log("Connected")
-// var data={{inp}}
-// console.log(data)
-// data.style.color="blue"
+var input=document.getElementById('word').value;
+console.log("user value is",input)
+// input.style.color="blue" 
+var sentances=document.getElementsByClassName('subject');
+for(var i = 0; i < sentances.length; i++){
+  let rep = '<span style="color:black">'+input+'</span>';
+  sentances[i].innerHTML = sentances[i].innerHTML.replace(input, rep);
+ }
 
-
-
-// function keyword(){
-//     console.log("input")
-//     {{inp}}
-//     var input=document.getElementById("word").value
-// console.log("user value is",input)
-    
-// }
 
 
 
