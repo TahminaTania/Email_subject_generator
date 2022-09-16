@@ -22,7 +22,7 @@ async function copy(text, id) {
     var tooltip = document.getElementById(id);    
     tooltip.innerHTML = "Copied";  
     textArea.remove(); 
-    await sleep(1500);
+    await sleep(2000);
     outFunc(id);
   }
 
