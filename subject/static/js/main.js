@@ -1,14 +1,13 @@
-var input=document.getElementById('word').value;
-console.log("user value is",input)
-// input.style.color="blue" 
+// var category = document.getElementById('category').value;
+// console.log("user category is",category);
+
+
 var sentances=document.getElementsByClassName('subject');
-for(var i = 0; i < sentances.length; i++){
-  let rep = '<span style="color:black">'+input+'</span>';
-  sentances[i].innerHTML = sentances[i].innerHTML.replace(input, rep);
- }
-
-
-
+var input=document.getElementById('word').value;
+  for(var i = 0; i < sentances.length; i++){
+    let rep = '<span style="color:black">'+input+'</span>';
+    sentances[i].innerHTML = sentances[i].innerHTML.replace(input, rep);
+  }
 
 async function copy(text, id) {  
     // test(); 
@@ -40,3 +39,7 @@ async function copy(text, id) {
 
 
 
+function loadMore(){
+  console.log("loaded");
+
+}

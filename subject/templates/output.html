@@ -1,46 +1,26 @@
-{% extends 'subject.html' %}
-{%block output%}
-{%load static%}
+{% extends 'subject.html' %} {%block output%} {%load static%}
 
-<section> 
-    <h4 class="mt-3 mb-3">Here are your subject lines..</h4>
-    <ol>
-        
-        {%for item in sub%}
-
+<section>
+  <h4 class="mt-3 mb-3">Here are your subject lines..</h4>
+  <ol>
+    {% comment %} {%for item in sub|slice:"0:3"%} {% endcomment %}
+    {%for item in sub%}
+     <div> 
         <div class="text-center" id="titl">
-        <span class="subject"> {{ item.title | safe }} </span>
-        <span class="copy" id="{{item.id}}" onclick="copy(`{{ item.title | safe }}`, '{{item.id}}')">Copy</span>
-
+          <span class="subject"> {{ item.title | safe }} </span>
+          <span
+            class="copy"
+            id="{{item.id}}"
+            onclick="copy(`{{ item.title | safe }}`, '{{item.id}}')"
+            >Copy</span
+          >
         </div>
-        {%endfor%}
-        {% comment %} 
-        {{catagory}}
-        {{sentance}}
-        {{inp}} 
-        {% endcomment %}
-    </ol>
-
+     <div>    
+    {%endfor%}
+  </ol>
+  <div class="text-center mt-5 mb-5">
+    <button class="btn btn-primary btn-lg" onclick=loadMore()>Generate More</button>
+  <div>
 </section>
 
-
 {%endblock%}
-
-
-<span className="email-text">
-    {email.map((item) => {
-      return (
-        <p
-          key={item.id}
-          className="tooltips"
-          onClick={() => copyToClipboard(item.email)}
-          onMouseOut={() => outFunc(item.email)}
-        >
-          <span className="tooltiptext" id={item.email}>
-            Copy
-          </span>
-          <span className="text-maxlimit">{item.email}</span>
-        </p>
-      );
-    })}
-  </span>

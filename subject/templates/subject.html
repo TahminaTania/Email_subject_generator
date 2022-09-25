@@ -34,10 +34,13 @@
                   <label class="form-label">Choose Category</label>
                   <div class="">
                     <select class="form-select" name="category" id="category">
-                      <option>select from here</option>
-                      <option value="1">Benefit</option>
-                      <option value="2">Topic</option>
-                      <option value="3">Pain-Point</option>
+                      <option>
+                        {% if request.GET.category %} {{request.GET.category}}
+                        {% else %} Select Category {%endif %}
+                      </option>
+                      <option value="Benefit">Benefit</option>
+                      <option value="Topic">Topic</option>
+                      <option value="Pain-Point">Pain-Point</option>
                     </select>
                   </div>
                 </div>
@@ -58,17 +61,14 @@
               </div>
             </div>
             <div class="G_btn">
-              <button
-                type="submit"
+              <input
                 class="btn btn-primary btn-lg"
-                onload="keyword()"
-              >
-                Generate
-              </button>
-              <!--onclick="keyword()"-->
+                type="submit"
+                value="Generate"
+              />
             </div>
-            <!-- <input type="submit" value="Generate">  -->
           </form>
+
           <div class="row" id="output">
             <div class="col-md-12">{%block output%} {%endblock %}</div>
           </div>
@@ -81,3 +81,6 @@
     <script src="{%static 'js/bootstrap.js'%}"></script>
   </body>
 </html>
+
+{% comment %} {% if sort == 'name' %}selected{% endif %}
+{{request.GET.category}} {% endcomment %}
