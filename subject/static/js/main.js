@@ -38,8 +38,30 @@ async function copy(text, id) {
 
 
 
+num=0;
+numB=3
 
 function loadMore(){
   console.log("loaded");
+    if((num<sub.length) && (num+3<sub.length)){
+    numB=numB+3
+    num=num+3
+    print("firstone")
+    }
+    else if(num==sub.length){
+    num=3
+    numB=0
+    print("2one")
+    }
+    else if(num+3>sub.length){
+    numB=sub.length-3
+    num=sub.length
+    print("3one")
+    }
+    else{
+    num=num+3
+    numB=numB+3
+  }
+
 
 }

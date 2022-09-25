@@ -7,22 +7,20 @@ from django.shortcuts import render, redirect, reverse
 from django.http import HttpResponse
 # from .forms import inputForm
 from .models import pin_point, benefit, topic
-from django.core.paginator import Paginator
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 
 
 def mail(request):
     sub = None
     sentance = None
-    inp = request.GET.get("word")
-    cat = request.GET.get("category")
     if request.method == 'GET':
+        inp = request.GET.get("word")
+        cat = request.GET.get("category")
         print("getted")
         if cat and inp:
             if cat == "Benefit":
                 sub = benefit.objects.all()
-                paginator = Paginator(sub, 3)
-
             elif cat == "Topic":
                 sub = topic.objects.all()
             elif cat == "Pain-Point":
@@ -36,5 +34,5 @@ def mail(request):
         'sub': sub,
         'catagory': cat,
         'sentance': sentance,
-        'inp': inp
+        'inp': inp,
     })
