@@ -1,11 +1,10 @@
 {% extends 'subject.html' %} {%block output%} {%load static%}
-
+{%load static%}
 <section>
-  <h4 class="mt-3 mb-3">Here are your subject lines..</h4>
-  {% if sub%}
+  <h4 class="mt-3 mb-3"> Write Best Contents with best Title & Headlines...</h4>
+  {% comment %} {% if sub%} {% endcomment %}
   <ol>
     {%for item in sub%}
-    {% comment %} {%for item in sub%} {% endcomment %}
      <div> 
         <div class="text-center" id="titl">
           <span class="subject"> {{ item.title | safe }} </span>
@@ -20,8 +19,11 @@
     {%endfor%}
   </ol>
 
+  
 
-    {%endif%}
+
+
+  {% comment %} {%endif%} {% endcomment %}
 
 
 

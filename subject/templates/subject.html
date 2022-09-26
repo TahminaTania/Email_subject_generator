@@ -1,5 +1,3 @@
-{%load static%}
-
 <html>
   <head>
     <meta charset="utf-8" />
@@ -7,26 +5,28 @@
     <title>Email Signature Generator</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="{% static 'css/bootstrap.css'%}" />
-    <link rel="stylesheet" href="{% static 'css/main.css'%}" />
+    <link rel="stylesheet" href="../static/css/bootstrap.css" />
+    <link rel="stylesheet" href="../static/css/main.css" />
     <script
       src="https://kit.fontawesome.com/af8513a429.js"
       crossorigin="anonymous"
     ></script>
-    <script src="{%static 'js/main.js'%}"></script>
+    <script src="../static/js/main.js"></script>
   </head>
   <body>
     <div class="body mt-5">
-      <h1 class="text-center mb-5">Email Subject Line Generator</h1>
+      <h1 class="text-center mb-5">Title Generator</h1>
       <p class="text-center">
-        Choose a keyword category (Benefit, Topic, or Pain-Point), then enter
-        your keyword. Then click "generate subject lines" <br />
-        to get a list of ideas for your next great subject line!
+        Create awesome headlines with our title generator including blog topics,
+        blog headlines, or anything else. <br />
+        With this title maker, you can view several fantastic titles for your
+        next headline <br />
+        and be well on your way to a great article.
       </p>
 
       <div class="container">
         <div class="col-md-10 offset-1">
-          <form action="" method="GET">
+          <form action="" method="POST">
             {% csrf_token %}
             <div class="row">
               <div class="col-md-4">
@@ -35,7 +35,7 @@
                   <div class="">
                     <select class="form-select" name="category" id="category">
                       <option>
-                        {% if request.GET.category %} {{request.GET.category}}
+                        {% if request.POST.category %} {{request.POST.category}}
                         {% else %} Select Category {%endif %}
                       </option>
                       <option value="Benefit">Benefit</option>
@@ -55,7 +55,7 @@
                     placeholder="Lead-generation"
                     name="word"
                     id="word"
-                    value="{{ request.GET.word }}"
+                    value="{{ request.POST.word }}"
                   />
                 </div>
               </div>
@@ -65,20 +65,21 @@
                 class="btn btn-primary btn-lg"
                 type="submit"
                 value="Generate"
+                onload="color()"
               />
             </div>
           </form>
 
           <div class="row" id="output">
-            <div class="col-md-12">{%block output%} {%endblock %}</div>
+            <div class="col-md-12 mb-5">{%block output%} {%endblock %}</div>
           </div>
         </div>
       </div>
     </div>
-    <script src="{%static 'js/main.js'%}"></script>
-    <script src="{%static 'js/jquery.js'%}"></script>
-    <script src="{%static 'js/popper.js'%}"></script>
-    <script src="{%static 'js/bootstrap.js'%}"></script>
+    <script src="../static/js/main.js'%}"></script>
+    <script src="../static/js/jquery.js'%}"></script>
+    <script src="../static/js/popper.js'%}"></script>
+    <script src="../static/js/bootstrap.js"></script>
   </body>
 </html>
 
